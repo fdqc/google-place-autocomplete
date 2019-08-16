@@ -18,9 +18,9 @@ export class PlaceService {
    * @param location string
    * @param sessiontoken string
    */
-  public autocomplete(toSearch: string, location: string, sessiontoken: string) {
+  public autocomplete(toSearch: string, location: string, sessiontoken: string, API_KEY: string) {
     return this.http.get(
-      Config.apiUrl + `?input=${toSearch}&location=${location}&radius=500&key=${Config.API_KEY}&sessiontoken=${sessiontoken}`
+      Config.apiUrl + `?input=${toSearch}&location=${location}&radius=500&key=${API_KEY}&sessiontoken=${sessiontoken}`
     ).pipe(catchError(this.handleErrors));
   }
 

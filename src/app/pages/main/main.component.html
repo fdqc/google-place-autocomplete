@@ -3,10 +3,5 @@
         (selectedIndexChanged)="onchange($event)" row="0" colSpan="2">
     </DropDown>
 
-    <TextField hint="Search" [(ngModel)]="searchString" (textChange)="onTextChange($event)"></TextField>
-    <ListView height="200" [items]="places">
-        <ng-template let-place="item">
-            <label [text]="place" (tap)="placeSelected(place)"></label>
-        </ng-template>
-    </ListView>
+    <ns-autocomplete [location]="selectedLocation" [API_KEY]="API_KEY"></ns-autocomplete>
 </StackLayout>

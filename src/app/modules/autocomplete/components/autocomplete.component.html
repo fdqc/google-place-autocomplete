@@ -1,0 +1,6 @@
+<TextField hint="Search" [(ngModel)]="searchString" (textChange)="onTextChange($event)"></TextField>
+<ListView height="200" [items]="places">
+    <ng-template let-place="item">
+        <label [text]="place" (tap)="placeSelected(place)"></label>
+    </ng-template>
+</ListView>
